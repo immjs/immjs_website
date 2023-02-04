@@ -1,0 +1,162 @@
+:root {
+  --base: #232634;
+  --crust: #232634;
+  --surface0: #414559;
+  --surface1: #51576d;
+  --overlay1: #838ba7;
+  --text: #c6d0f5;
+  --lavender: #babbf1;
+  --sapphire: #85c1dc;
+  --sky: #99d1db;
+  --blue: #8caaee;
+  --teal: #81c8be;
+  --green: #a6d189;
+  --yellow: #e5c890;
+  --peach: #ef9f76;
+  --maroon: #ea999c;
+  --red: #e78284;
+  --mauve: #ca9ee6;
+  --pink: #f4b8e4;
+  --flamingo: #eebebe;
+  --rosewater: #f2d5cf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--base);
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  margin: -8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface1);
+  border-radius: 8px;
+  border: solid transparent 4px;
+  background-clip: padding-box;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main > .group {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 32px;
+  width: 1040px;
+}
+
+.h.group {
+  flex-direction: row;
+}
+.v.group {
+  flex-direction: column;
+}
+
+.h.group > .v.group,
+.v.group > .h.group {
+  flex: 1;
+}
+
+.group {
+  display: flex;
+  gap: 16px;
+}
+
+.panel {
+  width: 100%;
+  min-width: 512px;
+}
+
+.forceround, .panel {
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.panel.group, .panel .group {
+  gap: 8px;
+}
+
+.group > .panel {
+  border-radius: 16px;
+}
+
+.surface {
+  padding: 16px;
+  background-color: var(--surface0);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panel .group.h > .group.v > *,
+.panel .group.v > .group.h > *,
+.panel.group.h > .group.v > *,
+.panel.group.v > .group.h > * {
+  flex: 1;
+}
+
+
+h1 {
+  margin: 0;
+  font-family: DotGothic16;
+  line-height: 35px;
+  font-size: 24px;
+  font-weight: 400;
+  color: inherit;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Space Mono';
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+  font-family: 'Space Mono';
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 512px) {
+  p {
+    margin: 0;
+    font-family: 'Space Mono';
+    line-height: calc(100vw / 21.33);
+    font-size: calc((100vw - 112px) / 25);
+  }
+  main > .group {
+    margin: 0;
+  }
+  .panel {
+    border-radius: 0px;
+  }
+  .group.panel, .group > .panel {
+    border-radius: 0px;
+  }
+  main > .group > .group {
+    min-width: 100vw;
+  }
+  .surface {
+    border-radius: 0px;
+  }
+}

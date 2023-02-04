@@ -14,14 +14,16 @@ const config: GatsbyConfig = {
     options: {
       "icon": "src/images/icon.png"
     }
-  }, "gatsby-plugin-mdx", {
-    resolve: 'gatsby-source-filesystem',
+  }, {
+    resolve: `gatsby-source-filesystem`,
     options: {
-      "name": "pages",
-      "path": "./src/pages/"
+      path: `${__dirname}/content/blog/`,
+      name: `blog`,
     },
-    __key: "pages"
-  }]
+  },
+  "gatsby-plugin-mdx",
+  "gatsby-transformer-sharp",
+  "gatsby-plugin-image"]
 };
 
 export default config;

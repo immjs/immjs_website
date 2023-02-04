@@ -1,0 +1,12 @@
+.panel[data-name="about_me"] {
+  color: var(--text);
+}
+.panel[data-name="skillset"] {
+  color: var(--maroon);
+}
+.panel[data-name="projects"] {
+  color: var(--green);
+}
+.panel[data-name="articles"] {
+  color: var(--blue);
+}
