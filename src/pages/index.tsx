@@ -4,7 +4,6 @@ import { graphql, HeadFC, Link, PageProps } from "gatsby";
 import "../../static/styles.css";
 import "./index.css";
 import { Tag } from "../components/Tag";
-import { InvisibleLink } from "../components/Links";
 
 interface ArticlePreviewProps {
   title: string;
@@ -24,7 +23,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
   slug,
 }) => {
   return (
-    <InvisibleLink href={`/${slug}`} className="surface" key={slug}>
+    <>
       <div style={{
         display: "flex",
         gap: 8,
@@ -63,7 +62,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({
         <p>min read</p>
         <p>{date}</p>
       </div>
-    </InvisibleLink>
+    </>
   );
 };
 
